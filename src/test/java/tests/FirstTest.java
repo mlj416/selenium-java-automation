@@ -4,13 +4,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.*;
+import pages.GooglePage;
 
 public class FirstTest {
 
     WebDriver driver;
 
+    @BeforeMethod
     public void setup() {
         WebDriverManager.chromedriver().setup();
 
@@ -18,37 +21,41 @@ public class FirstTest {
         options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
+
+        driver.get("https://www.google.com");
+    }
+
+    @Test
+    public void validateGooglePageTitle() {
+        GooglePage googlePage = new GooglePage(driver);
+
+        String title = googlePage.getPageTitle();
+
+        Assert.assertTrue(title.contains("Google"), "Title does not contain 'Google'");
+    }
+
+    @Test
+    public void validateGoogleSearchBoxIsDisplayed() {
+        GooglePage googlePage = new GooglePage(driver);
+
+        Assert.assertTrue(googlePage.isSearchBoxDisplayed(), "Search box is not displayed");
+    }
+
+    @Test(enabled = false)
+    public void validateGoogleTitleNegativeTest() {
+        GooglePage googlePage = new GooglePage(driver);
+
+        String title = googlePage.getPageTitle();
+
+        Assert.assertTrue(title.contains("Bing"), "Title does not contain 'Bing'");
     }
 
 
-    public void navigateTo(String url) {
-        driver.get(url);
-        driver.manage().window().maximize();
-        System.out.println("Title: " + driver.getTitle());
-    }
-
+    @AfterMethod
     public void tearDown() {
-        driver.quit();
-    }
-
-    public void validateElementText(By locator, String expectedText) {
-        String actualText = driver.findElement(locator).getText();
-
-        Assert.assertEquals(actualText, expectedText, "Could not find element " + locator);
-
-        System.out.println("Validation passed!");
-    }
-
-    public static void main(String[] args) {
-        FirstTest test = new FirstTest();
-
-        try {
-            test.setup();
-            test.navigateTo("https://example.com");
-            test.validateElementText(By.cssSelector("h1"), "Google");
-        } finally {
-            test.tearDown();
+        if (driver != null) {
+            driver.quit();
         }
     }
-
 }
+
