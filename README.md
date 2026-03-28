@@ -9,12 +9,13 @@ This project demonstrates a basic UI automation framework using Selenium WebDriv
 * Java
 * Selenium WebDriver
 * WebDriverManager
-* TestNG (in progress)
+* TestNG
 
 ## 🚀 Features
 
 - Implemented Page Object Model (POM) for maintainable and scalable test design
 - Integrated WebDriverManager for automated browser driver management
+- Implemented TestNG lifecycle annotations (@BeforeMethod, @Test, @AfterMethod)
 - Automated navigation to web pages
 - Located web elements using CSS selectors
 - Performed validation using TestNG assertions
@@ -23,20 +24,20 @@ This project demonstrates a basic UI automation framework using Selenium WebDriv
 
 * Navigate to a webpage
 * Extract text from an element
-* Validate expected vs actual result
+*  Validate expected results using assertions
 
 ## 🧪 Sample Test #2
 
 * Navigate to a webpage
 * Find the search box
-* Validate expected vs actual result
+* Validate expected results using assertions
 
 ## 🧪 Sample Test #3 
 
 * Negative test included to demonstrate failure handling
 * Navigate to a webpage
 * Extract text from an element
-* Validate expected vs actual result
+* Validate expected results using assertions
 
 ## 🧪 Sample Test #4
 
