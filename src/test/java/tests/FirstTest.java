@@ -50,6 +50,13 @@ public class FirstTest {
         Assert.assertTrue(title.contains("Bing"), "Title does not contain 'Bing'");
     }
 
+    @Test
+    public void validateSearchResultsAppear() {
+        GooglePage page = new GooglePage(driver);
+        page.search("Selenium");
+
+        Assert.assertTrue(page.resultsDisplayed());
+    }
 
     @AfterMethod
     public void tearDown() {
