@@ -38,7 +38,13 @@ This project demonstrates a basic UI automation framework using Selenium WebDriv
 * Extract text from an element
 * Validate expected vs actual result
 
-## 🛠️ Setup
+## 🧪 Sample Test #4
+
+- Navigate to the Google homepage
+- Perform a search using a query input
+- Validate that the results page is displayed using URL verification
+
+## 🛠️ Setup & Execution
 
 1. Clone the repository
 2. Open in IntelliJ
@@ -47,8 +53,6 @@ This project demonstrates a basic UI automation framework using Selenium WebDriv
 
 ## 📈 Future Improvements
 
-* Convert tests to TestNG
-* Implement Page Object Model (POM)
 * Add explicit waits
 * Add reporting (Allure/Extent)
 
