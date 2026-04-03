@@ -63,6 +63,7 @@ The project demonstrates real-world automation practices, including structured t
 
 ```bash
 mvn clean test
+```
 
 ## 📈 Future Improvements
 
