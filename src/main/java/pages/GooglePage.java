@@ -24,8 +24,8 @@ public class GooglePage {
         return driver.findElement(searchBox).isDisplayed();
     }
 
-    public void search(String query)  {
-        driver.findElement(searchBox).sendKeys(query);
+    public void search(String query) {
+        wait.until(ExpectedConditions.elementToBeClickable(searchBox)).sendKeys(query);
         driver.findElement(searchBox).submit();
     }
 
