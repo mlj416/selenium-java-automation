@@ -2,51 +2,62 @@
 
 ## 📌 Overview
 
-Designed and developed a Selenium WebDriver-based automation framework using Java to support scalable and maintainable UI test automation. The framework leverages the Page Object Model (POM) design pattern to separate test logic from UI interactions, improving readability, reusability, and long-term maintainability.
+## 📌 Overview
 
-The project demonstrates real-world automation practices, including structured test design, reliable element interaction, and validation strategies aligned with Agile development workflows.
+This project demonstrates a UI automation framework built using Selenium WebDriver with Java. It showcases browser automation, structured test execution using TestNG, and scalable design using the Page Object Model (POM), with a focus on modern test automation practices and framework design.
 
 ## 🧰 Tech Stack
 
-* Java
-* Selenium WebDriver
-* WebDriverManager
-* TestNG
+- Java
+- Selenium WebDriver
+- WebDriverManager
+- TestNG
+- Maven
 
 ## 🏗️ Framework Design
 
-- Built using the Page Object Model (POM) to promote separation of concerns
-- Centralized browser setup and teardown using TestNG lifecycle methods
-- Reusable page classes and utility methods to reduce code duplication
-- Designed with scalability in mind to support additional test cases and future enhancements
+- Implemented the Page Object Model (POM) to separate UI interactions from test logic
+- Managed browser setup and teardown using TestNG lifecycle annotations (`@BeforeMethod`, `@AfterMethod`)
+- Encapsulated user actions within page classes to improve reusability and readability
+- Integrated explicit waits (WebDriverWait) to handle dynamic elements and improve test stability
+- Designed with scalability in mind to support additional test scenarios and future enhancements
 
 ## 🚀 Features
 
-- Implemented Page Object Model (POM) for scalable and maintainable test design
+- Automated end-to-end UI test scenarios using reusable page classes
+- Utilized TestNG for structured test execution, lifecycle management, and assertions
 - Integrated WebDriverManager for automated browser driver management
-- Utilized TestNG for test execution, annotations, and assertions
-- Implemented reliable element locators using CSS selectors
-- Automated end-to-end UI test scenarios
-- Structured test setup and teardown using TestNG lifecycle annotations
+- Implemented explicit waits (WebDriverWait) to handle dynamic elements and improve test stability
+- Designed scalable test architecture to support additional scenarios and future enhancements
+
+## 🧪 Example Test
+
+```java
+GooglePage page = new GooglePage(driver);
+
+page.search("Selenium");
+Assert.assertTrue(page.resultsDisplayed());
+```
+Demonstrates a search workflow using the Page Object Model with validation via assertions.
 
 ## 🧪 Sample Test #1
 
-* Navigate to a webpage
-* Extract text from an element
-*  Validate expected results using assertions
+- Navigate to a webpage
+- Extract text from an element
+- Validate expected results using assertions
 
 ## 🧪 Sample Test #2
 
-* Navigate to a webpage
-* Find the search box
-* Validate expected results using assertions
+- Navigate to a webpage
+- Find the search box
+- Validate expected results using assertions
 
 ## 🧪 Sample Test #3 
 
-* Negative test included to demonstrate failure handling
-* Navigate to a webpage
-* Extract text from an element
-* Validate expected results using assertions
+- Negative test included to demonstrate failure handling
+- Navigate to a webpage
+- Extract text from an element
+- Validate expected results using assertions
 
 ## 🧪 Sample Test #4
 
@@ -67,7 +78,6 @@ mvn clean test
 
 ## 📈 Future Improvements
 
-- Implement explicit waits for improved synchronization
 - Add reporting using Allure or Extent Reports
 - Introduce data-driven testing using external data sources
 - Integrate with CI/CD pipelines for continuous testing
