@@ -30,6 +30,7 @@ public class GooglePage {
     }
 
     public boolean resultsDisplayed() {
+        wait.until(ExpectedConditions.urlContains("search"));
         return driver.getCurrentUrl().contains("search");
     }
 
