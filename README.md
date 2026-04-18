@@ -2,8 +2,6 @@
 
 ## 📌 Overview
 
-## 📌 Overview
-
 This project demonstrates a UI automation framework built using Selenium WebDriver with Java. It showcases browser automation, structured test execution using TestNG, and scalable design using the Page Object Model (POM), with a focus on modern test automation practices and framework design.
 
 ## 🧰 Tech Stack
