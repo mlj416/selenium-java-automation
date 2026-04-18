@@ -14,6 +14,7 @@ public class GooglePage {
     public GooglePage(WebDriver driver) {
         this.driver = driver;
     }
+    WebDriverWait wait;
 
     // Locators
     private By searchBox = By.name("q");
